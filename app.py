@@ -1,4 +1,4 @@
-
+import os
 from flask import Flask, render_template, request, redirect, url_for
 from sqlalchemy import select
 from sqlalchemy.exc import IntegrityError
@@ -48,4 +48,4 @@ def cadastrar_cliente():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=os.getenv("FLASK_DEBUG") == "1")
